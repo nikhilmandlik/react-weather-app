@@ -1,12 +1,12 @@
 {
   "name": "weather",
   "version": "1.0.0",
-  "description": "my weather app",
+  "description": "React Learning: My Weather App",
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
-  "author": "",
+  "author": "Nikhil Mandlik",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.2.1",
@@ -17,10 +17,12 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.1.18",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "redux-promise": "^0.5.3"
   }
 }
