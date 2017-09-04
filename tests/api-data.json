@@ -1,3 +1,10 @@
+// Find city from search Term and the use 
+// http://autocomplete.wunderground.com/aq?query=new%20york&c=US
+// Final:
+// http://api.wunderground.com/api/7905bb757a229109/hourly/q/zmw:10001.8.99999.json
+// http://api.wunderground.com/api/7905bb757a229109/hourly/q/CA/San_Francisco.json
+// http://api.wunderground.com/api/7905bb757a229109/hourly/q/San%20Francisco,US.json
+
 {
     "response": {
         "version": "0.1",
