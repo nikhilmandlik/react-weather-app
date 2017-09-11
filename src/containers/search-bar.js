@@ -24,7 +24,7 @@ class SearchBar extends Component {
 
     onFormSubmit(event) {
         event.preventDefault();
-        debugger;
+        
         let term = this.props.term.split(',');
         const cityName = term[0];
         const state = term[1].trim();
