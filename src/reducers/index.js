@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import myReducer from './my-reducer';
+import weatherReducer from './reducer-weather';
+import fetchCitiesReducer from './reducer-fetch-cities';
+import selectedCity from './reducer-selected-city';
 
 const RootReducer = combineReducers({
-        searchterm: myReducer
-    });
+        cities: fetchCitiesReducer,
+        selectedCity: selectedCity,
+        weather: weatherReducer
+});
 
 export default RootReducer;

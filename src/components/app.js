@@ -6,7 +6,7 @@ export default class App extends Component {
         return (
             <div>
                 <div >
-                    <div className="app-header">My Weather App!!</div>
+                    <div className="app-header">My Weather App</div>
                 </div>
                 <SearchBar />
             </div>

@@ -1,38 +1,51 @@
 import React, {Component}  from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import fetchWeather from '../actions/index';
+import * as FetchActionCreators from '../actions/index';
+
+import PopupCities from './popup-cities';
 
 class SearchBar extends Component {
     constructor(props) {
         super(props);
 
-        this.state= {term: ''};
+        this.state= {
+            term: ''
+        };
         this.onInputChange = this.onInputChange.bind(this);
-        this.onFormSubmit = this.onFormSubmit.bind(this);       
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     onInputChange(event) {
-        this.setState({term: event.target.value});
+        const searchTerm = event.target.value;
+        this.props.selectedCity(searchTerm);
+        this.props.fetchCities(searchTerm);
     }
 
     onFormSubmit(event) {
         event.preventDefault();
-
-        this.props.fetchWeather(this.state.term);
-        this.setState({term: ''});
+        debugger;
+        let term = this.props.term.split(',');
+        const cityName = term[0];
+        const state = term[1].trim();
+        term = `${cityName},${state}`;
+        this.props.fetchWeather(term);
+        this.props.selectedCity('');
     }
 
     render() {
         return (
             <div className="input-form">
                 <form className="form-inline" onSubmit={this.onFormSubmit}>
-                  <input type="text" className="form-control" placeholder="Please city name"
-                    value={this.state.term}
+                  <input type="text" className="form-control" placeholder="Enter city name"
+                    value={this.props.term}
                     onChange={this.onInputChange}
                   />
                   <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
+                </form>  
+                <div className="cities">
+                    <PopupCities />
+                </div>
                 <hr />
             </div>
         );
@@ -40,7 +53,13 @@ class SearchBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchWeather }, dispatch)
+    return bindActionCreators(FetchActionCreators, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+function mapStateToProps(state) {
+    return {
+        term: state.selectedCity
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
