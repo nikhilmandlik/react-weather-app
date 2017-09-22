@@ -1,10 +1,9 @@
 import * as actions from '../actions/index';
 
-export default function (state=null, action) {
+export default function (state=[], action) {
     switch (action.type) {
         case actions.FETCH_WEATHER:
-            // console.log(action.payload);
-            return action.payload;
+            return [action.payload, ...state] ;
     }
 
     return state;

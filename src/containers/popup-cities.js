@@ -62,7 +62,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(cities) {
-    return { cities }
+    return { cities };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PopupCities);

@@ -12,6 +12,7 @@ class SearchBar extends Component {
         this.state= {
             term: ''
         };
+        
         this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
@@ -27,9 +28,13 @@ class SearchBar extends Component {
         
         let term = this.props.term.split(',');
         const cityName = term[0];
-        const state = term[1].trim();
-        term = `${cityName},${state}`;
-        this.props.fetchWeather(term);
+
+        if (term[1] ) {
+            const state = term[1].trim();
+            term = `${cityName},${state}`;
+            this.props.fetchWeather(term);
+        }
+        
         this.props.selectedCity('');
     }
 
