@@ -9,6 +9,13 @@
     margin: 10px;
 }
 
+.chart-container {
+    border: 0;
+    background-color: #e8e8e8;
+    display: block;
+    height: 300px;
+}
+
 .cities {
     background: white;
     border: 1px solid beige;
@@ -23,11 +30,23 @@
     padding: 0;
 }
 
+.city-condition-icon {
+    height: 50px;
+    margin-right: 10px;
+    width: 50px;
+}
+.city-condition-text {
+    display: block;
+    float: left;
+    margin: 45px 10px;
+}
+
 .city-temp-container {
     background-color: #f9f9f9;
     border: 1px solid black;
     display: block;
     margin: 20px auto;
+    min-width: 290px;
     text-align: center;
     width: 75%;
 }
@@ -40,7 +59,13 @@
 }
 
 .city-temp {
-    font-size: 45px;
+    font-size: 38px;
+}
+
+.chart {
+    font-size: 15px;
+    /* width: 150px;
+    height: 150px; */
 }
 
 .container {
@@ -65,4 +90,12 @@
     background-color: #e6e5e5;
 }
 
-
+.x-axis path,
+.y-axis path,
+.x-axis line,
+.y-axis line {
+    fill: none;
+    stroke-width: 1px;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
