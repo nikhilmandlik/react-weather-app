@@ -10,3 +10,9 @@ Please follow instructions mentioned below:
 6. Install plugin (for chrome)
   `https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?utm_source=plus`
 7. This should solve the issue.
+
+![alt text](https://github.com/nikhilmandlik/react-weather-app/blob/master/Desktop.png)
+
+![alt text](https://github.com/nikhilmandlik/react-weather-app/blob/master/Mobile.png)
+
+![alt text](https://github.com/nikhilmandlik/react-weather-app/blob/master/Search-popup.png)
